@@ -1,0 +1,37 @@
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div id="btn_hide">
+    <h1 class="cover-heading"><%= @header.one.html_safe %></h1>
+    <h2>
+      <%= @header.two.html_safe %>
+      <br/>
+      <%= @header.tree.html_safe %>
+    </h2>
+    <%= link_to 'Изменить', edit_header_path(@header), remote: true, class: 'btn btn-light' if can? :manage, @header %>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="news" role="tabpanel" aria-labelledby="news-tab">
+    <div id="btn_hide_news">
+      <div class="row">
+        <%= render @posts %>
+      </div>
+      <%= link_to 'Создать', new_post_path, class: 'btn btn-primary', remote: true if can? :manage, :all %>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="partners" role="tabpanel" aria-labelledby="partners-tab">
+    <div id="btn_hide_partners">
+      <div class="row">
+        <%= render @partners %>
+        <%= link_to 'Создать', new_partner_path, class: 'btn btn-primary', remote: true if can? :manage, :all %>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="projects" role="tabpanel" aria-labelledby="projects-tab">
+    Проекты
+    <%= render @projects %>
+  </div>
+  <div class="tab-pane fade" id="center" role="tabpanel" aria-labelledby="center-tab">
+    О Цетре
+    <%= render @abouts %>
+  </div>
+</div>

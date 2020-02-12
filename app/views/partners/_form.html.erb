@@ -1,0 +1,12 @@
+<div class="bg-white p-2 rounded" data-controller="form-error">
+
+  <%= form_with(model: @partner) do |form| %>
+    <%= form.text_field :url, label: false, required: true, maxlength: 400, placeholder: 'Url', class: 'form-control mb-1' %>
+    <%= form.file_field :photo, direct_upload: true, class: 'mb-2 mt-1' %>
+    <div class="flex items-center">
+      <%= render 'application/progress_upload' %>
+      <%= content_tag(:button, 'Сохранить', type: 'submit', class: 'btn btn-primary') %>
+      <%= link_to 'Отмена', root_path(anchor: 'partner'), class: 'hover:bg-red-600 bg-red-400 text-white py-3 px-4' %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= display_meta_tags site: "IT ARCTIC" %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= tag.meta name: "direct-upload-url", content: rails_direct_uploads_path %>
+    <meta name="turbolinks-cache-control" content="no-preview">
+  </head>
+
+  <body class="text-center">
+    <%= render 'upload' %>
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">
+            <%= link_to main_app.root_url(subdomain: false), class: '' do %>
+              <%= icon_svg 'logo.svg', class: 'w-75' %>
+            <% end %>
+          </h3>
+          <%= yield(:menu).present? ? yield(:menu) : render('application/menu') %>
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <%= yield %>
+      </main>
+
+      <footer class="mastfoot mt-auto text-center">
+        <div class="inner">
+          <p>
+            itarctic.ru <%= content_tag :span, "© #{Date.today.year}" %> | г. Среднеколымск |
+            8800-800-80-08 |
+            info@itarctic.ru
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

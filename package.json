@@ -1,0 +1,30 @@
+{
+  "name": "itarctic",
+  "private": true,
+  "dependencies": {
+    "@excid3/uppy-activestorage-upload": "https://github.com/excid3/uppy-activestorage-upload.git",
+    "@fullhuman/postcss-purgecss": "^1.3.0",
+    "@rails/actioncable": "^6.0.2",
+    "@rails/actiontext": "^6.0.2-1",
+    "@rails/activestorage": "^6.0.2",
+    "@rails/ujs": "^6.0.2",
+    "@rails/webpacker": "4.2.2",
+    "@uppy/core": "^1.7.1",
+    "@uppy/dashboard": "^1.5.2",
+    "@uppy/locales": "^1.11.0",
+    "photoswipe": "^4.1.3",
+    "stimulus": "^1.1.1",
+    "bootstrap": "^4.4.1",
+    "data-confirm-modal": "^1.6.2",
+    "expose-loader": "^0.7.5",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0",
+    "local-time": "^2.1.0",
+    "trix": "^1.0.0",
+    "turbolinks": "^5.2.0"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "webpack-dev-server": "^3.10.3"
+  }
+}

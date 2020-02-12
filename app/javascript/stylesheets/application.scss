@@ -1,0 +1,11 @@
+@import 'bootstrap';
+@import 'main';
+@import 'actiontext';
+@import 'baseloader';
+@import 'notifications';
+@import 'search';
+
+$pswp__assets-path: '~photoswipe/src/css/default-skin/';
+@import '~photoswipe/src/css/main';
+@import '~photoswipe/src/css/default-skin/default-skin';
+
