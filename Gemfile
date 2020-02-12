@@ -66,3 +66,4 @@ gem 'foreman', '~> 0.87.0'
 gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
 gem 'whenever', require: false
 gem 'active_link_to', '~> 1.0', '>= 1.0.5'
+gem 'aws-sdk-s3', '~> 1.60', '>= 1.60.1'
