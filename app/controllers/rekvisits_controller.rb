@@ -1,0 +1,2 @@
+class RekvisitsController < ApplicationController
+end
