@@ -1,0 +1,9 @@
+<div class="col-sm-4 p-2">
+  <%= link_to project, class: 'card  text-dark', style: 'width: 16rem' do %>
+    <%= image_tag project.photo.variant(resize_to_fill: [300, 150]), class: 'card-img-top' if project.photo.attached? %>
+    <div class="card-body">
+      <h5 class="card-title"><%= sanitize(strip_tags(project.title)) %></h5>
+      <p class="card-text"><%= truncate(strip_tags(project.description), length: 100, omission: '...') %></p>
+    </div>
+  <% end %>
+</div>

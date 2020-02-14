@@ -1,0 +1,16 @@
+<% content_for :menu do %>
+  <%= render('posts/menu') %>
+<% end %>
+
+<div>
+  <h1>
+    <%= @project.title %>
+  </h1>
+
+  <div class="lead">
+    <%= @project.body %>
+  </div>
+
+  <%= link_to 'Изменить', edit_post_path(@project), class: 'btn btn-warning' if can? :manage, @project %>
+  <%= link_to 'Назад', root_path(anchor: 'projects') %>
+</div>

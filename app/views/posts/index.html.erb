@@ -27,8 +27,12 @@
     </div>
   </div>
   <div class="tab-pane fade" id="projects" role="tabpanel" aria-labelledby="projects-tab">
-    Проекты
-    <%= render @projects %>
+    <div id="btn_hide_projects">
+      <div class="row">
+        <%= render @projects %>
+      </div>
+      <%= link_to 'Создать', new_project_path, class: 'btn btn-primary', remote: true if can? :manage, :all %>
+    </div>
   </div>
   <div class="tab-pane fade" id="center" role="tabpanel" aria-labelledby="center-tab">
     О Цетре
