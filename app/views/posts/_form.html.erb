@@ -20,7 +20,7 @@
     <div class="flex items-center">
       <%= render 'application/progress_upload' %>
       <%= content_tag(:button, 'Сохранить', type: 'submit', class: 'btn btn-primary') %>
-      <%= link_to 'Отмена', root_path, class: 'hover:bg-red-600 bg-red-400 text-white py-3 px-4' %>
+      <%= link_to 'Отмена', root_path(anchor: 'news'), class: 'btn btn-warning' %>
     </div>
   <% end %>
 </div>

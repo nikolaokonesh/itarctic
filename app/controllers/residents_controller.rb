@@ -15,7 +15,7 @@ class ResidentsController < ApplicationController
   def create
     @resident = Resident.new(resident_params)
     if @resident.save
-      redirect_to @resident, notice: 'Успешно добавлено!'
+      redirect_to root_url(anchor: 'center'), notice: 'Успешно добавлено!'
     else
       render partial: 'error', locals: { post: @resident }, status: :bad_request
     end
@@ -23,7 +23,7 @@ class ResidentsController < ApplicationController
 
   def update
     if @resident.update(resident_params)
-      redirect_to @resident, notice: 'Успешно обновлено!'
+      redirect_to root_url(anchor: 'center'), notice: 'Успешно обновлено!'
     else
       render partial: 'error', locals: { post: @resident }, status: :bad_request
     end

@@ -8,8 +8,8 @@ class PostsController < ApplicationController
     @partners = Partner.all
     @projects = Project.all
     @abouts = About.all
-    @rekvisit = Rekvisit.all
-    @resident = Resident.all
+    @rekvisits = Rekvisit.all
+    @residents = Resident.all
   end
 
   # GET /posts/1

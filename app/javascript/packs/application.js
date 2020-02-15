@@ -13,7 +13,6 @@ require("stylesheets/application.scss")
 window.Rails = Rails
 
 import 'bootstrap'
-import 'data-confirm-modal'
 
 $(document).on("turbolinks:load", () => {
   let url = location.href.replace(/\/$/, "");

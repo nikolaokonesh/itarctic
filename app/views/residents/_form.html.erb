@@ -1,10 +1,9 @@
 <div class="bg-white p-2 rounded" data-controller="form-error">
 
-  <%= form_with(model: @project, html: { data: { type: "html",
+  <%= form_with(model: @resident, html: { data: { type: "html",
                        action: "ajax:error->form-error#onPostError" } }) do |form| %>
-    <%= form.text_field :title, label: false, required: true, maxlength: 400, placeholder: 'Заголовок', class: 'form-control mb-1' %>
-    <%= form.rich_text_area :body, class: 'text-left text-dark' %>
-    <%= form.text_field :url, label: false, maxlength: 400, placeholder: 'Url', class: 'form-control mb-1' %>
+    <%= form.text_field :name, label: false, required: true, maxlength: 400, placeholder: 'Ф.И.О.', class: 'form-control mb-1' %>
+    <%= form.rich_text_area :body, class: 'text-left text-dark', placeholder: 'Коротко о сотруднике, профессия и должность' %>
     <%= form.file_field :photo, direct_upload: true, class: 'mb-2 mt-1' %>
 
     <ul class="post-errors" data-target="form-error.postErrors"></ul>
@@ -12,7 +11,7 @@
       <%= render 'application/progress_upload' %>
 
       <%= content_tag(:button, 'Сохранить', type: 'submit', class: 'btn btn-primary') %>
-      <%= link_to 'Отмена', root_path(anchor: 'projects'), class: 'btn btn-warning' %>
+      <%= link_to 'Отмена', root_path(anchor: 'center'), class: 'btn btn-warning' %>
     </div>
   <% end %>
 </div>

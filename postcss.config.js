@@ -14,7 +14,7 @@ let environment = {
 
 
 // Only run PurgeCSS in production(you can also add staging here)
-if (process.env.RAILS_ENV === "production") {
+if (process.env.RAILS_ENV === "development") {
   environment.plugins.push(
     require('@fullhuman/postcss-purgecss')({
       content: [
@@ -25,6 +25,8 @@ if (process.env.RAILS_ENV === "production") {
         './node_modules/photoswipe/**/*.js',
         './node_modules/trix/**/*.js',
         './node_modules/@uppy/**/*.js',
+        './node_modules/bootstrap/**/*.js',
+        './node_modules/popper.js/**/*.js',
         // './app/javascript/**/*.vue',
         // './app/javascript/**/*.jsx',
       ],

@@ -1,7 +1,7 @@
 <nav class="nav nav-masthead justify-content-center mt-5" id="myTab" role="tablist">
+  <%= link_to 'О Центре', '#center', class: 'nav-link', id: "center-tab", "data-toggle" => "tab", role: "tab", "aria-controls" => "center", "aria-selected" => "true" %>
   <%= link_to 'Новости', '#news', class: 'nav-link', id: "news-tab", remote: false, "data-toggle" => "tab", role: "tab", "aria-controls" => "news", "aria-selected" => "true" %>
   <%= link_to 'Партнеры', '#partners', class: 'nav-link', id: "partners-tab", remote: false, "data-toggle" => "tab", role: "tab", "aria-controls" => "partners", "aria-selected" => "false" %>
   <%= link_to 'Проекты', '#projects', class: 'nav-link', id: "projects-tab", "data-toggle" => "tab", role: "tab", "aria-controls" => "projects", "aria-selected" => "false" %>
-  <%= link_to 'О Центре', '#center', class: 'nav-link', id: "center-tab", "data-toggle" => "tab", role: "tab", "aria-controls" => "center", "aria-selected" => "true" %>
   <%= link_to 'Выйти', main_app.destroy_user_session_path, class: 'nav-link', method: :delete if can? :manage, :all %>
 </nav>

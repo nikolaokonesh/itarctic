@@ -1,0 +1,6 @@
+<% content = resident.name.to_s + ' | ' + resident.body.to_plain_text %>
+
+<div class="col-sm-3 mx-auto p-2">
+  <%= image_tag resident.photo.variant(resize_to_fill: [180, 180]), data: {placement: "top", toggle: "tooltip"}, title: content.html_safe, class: 'rounded-circle bg-white shdow' if resident.photo.attached? %>
+  <%= link_to 'изменить', edit_resident_path(resident) if can? :manager, resident %>
+</div>

@@ -36,10 +36,25 @@
   </div>
   <div class="tab-pane fade" id="center" role="tabpanel" aria-labelledby="center-tab">
     <div id="btn_hide_about" class="mt-5">
-      <div class="row">
+      <div class="row mt-5">
         <%= render @abouts %>
+        <div class="row w-100">
+          <%= link_to 'Создать о центре', new_about_path, class: 'btn btn-primary', remote: true if can? :manage, :all %>
+        </div>
       </div>
-      <%= link_to 'Создать о центре', new_about_path, class: 'btn btn-primary', remote: true if can? :manage, :all %>
+      <div class="row mt-5">
+        <h1 class="w-100 d-block text-center">Наша команда</h1>
+        <%= render @residents %>
+        <div class="row w-100">
+          <%= link_to 'Добавить сотрудника', new_resident_path, class: 'btn btn-primary', remote: true if can? :manage, :all %>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <%= render @rekvisits %>
+        <div class="row w-100">
+          <%= link_to 'Добавить реквизиты', new_rekvisit_path, class: 'btn btn-primary', remote: true if can? :manage, :all %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <nav class="nav nav-masthead justify-content-center mt-5" id="myTab" role="tablist">
+  <%= link_to 'О Центре', root_path(anchor: 'center'), class: 'nav-link' %>
   <%= link_to 'Новости', root_path(anchor: 'news'), class: 'nav-link' %>
   <%= link_to 'Партнеры', root_path(anchor: 'partners'), class: 'nav-link' %>
   <%= link_to 'Проекты', root_path(anchor: 'projects'), class: 'nav-link' %>
-  <%= link_to 'О Центре', root_path(anchor: 'center'), class: 'nav-link' %>
   <%= link_to 'Выйти', main_app.destroy_user_session_path, class: 'nav-link', method: :delete if can? :manage, :all %>
 </nav>
