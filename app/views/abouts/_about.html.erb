@@ -1,0 +1,12 @@
+<div>
+  <h1>
+    <%= about.title %>
+  </h1>
+
+  <div class="lead">
+    <%= about.body %>
+  </div>
+
+  <%= link_to 'Изменить', edit_about_path(about), class: 'btn btn-warning' if can? :manage, about %>
+  <%= link_to 'Удалить', about, method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger' if can? :manage, about  %>
+</div>

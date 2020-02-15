@@ -12,11 +12,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <%= tag.meta name: "direct-upload-url", content: rails_direct_uploads_path %>
-    <meta name="turbolinks-cache-control" content="no-preview">
   </head>
 
   <body class="text-center">
-    <%= render 'upload' %>
+    <%#= render 'upload' %>
 
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
@@ -41,7 +40,7 @@
           <p>
             itarctic.ru <%= content_tag :span, "© #{Date.today.year}" %> | г. Среднеколымск |
             8800-800-80-08 |
-            info@itarctic.ru
+            info@itarctic.ru | <%= link_to 'Обратная связь', new_feedback_path, class: 'd-inline-block' %>
           </p>
         </div>
       </footer>

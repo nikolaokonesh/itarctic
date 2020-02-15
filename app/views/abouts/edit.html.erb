@@ -1,0 +1,9 @@
+<% content_for :menu do %>
+  <%= render('posts/menu') %>
+<% end %>
+
+<h1>Editing About</h1>
+
+<%= render 'form', about: @about %>
+
+<%= link_to 'Back', root_url(anchor: 'center') %>

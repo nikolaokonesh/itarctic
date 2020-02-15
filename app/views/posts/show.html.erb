@@ -12,5 +12,6 @@
   </div>
 
   <%= link_to 'Изменить', edit_post_path(@post), class: 'btn btn-warning' if can? :manage, @post %>
+  <%= link_to 'Удалить', @post, method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger' if can? :manage, @post  %>
   <%= link_to 'Назад', root_path(anchor: 'news') %>
 </div>

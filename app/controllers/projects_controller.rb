@@ -13,22 +13,28 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(partner_params)
-
+    @project = Project.new(project_params)
     if @project.save
-      redirect_to root_url(anchor: 'partners')
+      redirect_to @project, notice: 'Успешно добавлено!'
+    else
+      render partial: 'error', locals: { post: @project }, status: :bad_request
     end
   end
 
   def update
-    if @project.update(partner_params)
-      redirect_to root_url(anchor: 'partners'), notice: 'Post was successfully updated.'
+    if @project.update(project_params)
+      redirect_to @project, notice: 'Успешно обновлено!'
+    else
+      render partial: 'error', locals: { post: @project }, status: :bad_request
     end
   end
 
   def destroy
     @project.destroy
-    redirect_to root_url(anchor: 'partners'), notice: 'Post was successfully destroyed.'
+    respond_to do |format|
+      format.html { redirect_to root_url(anchor: 'projects'), notice: 'Post was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
@@ -39,7 +45,7 @@ class ProjectsController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
-    def partner_params
-      params.require(:project).permit(:title, :body, :photo, :description)
+    def project_params
+      params.require(:project).permit(:title, :body, :photo, :description, :url)
     end
 end

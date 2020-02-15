@@ -1,0 +1,16 @@
+<% content_for :menu do %>
+  <%= render('posts/menu') %>
+<% end %>
+
+<h1>Обратная связь</h1>
+<div id="feedbacking_show" data-turbolinks-permanent>
+  <div id="complate_hidden" >
+    <%= render 'form', feedback: @feedback %>
+  </div>
+  <div id="complate_text" class="d-none">
+    <div class="text-white text-center">
+      Ваше обращение успешно отправлено менеджеру.
+      <br/>Спасибо!
+    </div>
+  </div>
+</div>

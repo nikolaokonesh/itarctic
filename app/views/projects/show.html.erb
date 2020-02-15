@@ -11,6 +11,7 @@
     <%= @project.body %>
   </div>
 
-  <%= link_to 'Изменить', edit_post_path(@project), class: 'btn btn-warning' if can? :manage, @project %>
+  <%= link_to 'Изменить', edit_project_path(@project), class: 'btn btn-warning' if can? :manage, @project %>
+  <%= link_to 'Удалить', @project, method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger' if can? :manage, @project  %>
   <%= link_to 'Назад', root_path(anchor: 'projects') %>
 </div>

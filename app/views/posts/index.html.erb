@@ -15,14 +15,14 @@
       <div class="row">
         <%= render @posts %>
       </div>
-      <%= link_to 'Создать', new_post_path, class: 'btn btn-primary', remote: true if can? :manage, :all %>
+      <%= link_to 'Создать новости', new_post_path, class: 'btn btn-primary', remote: true if can? :manage, :all %>
     </div>
   </div>
   <div class="tab-pane fade" id="partners" role="tabpanel" aria-labelledby="partners-tab">
     <div id="btn_hide_partners">
       <div class="row">
         <%= render @partners %>
-        <%= link_to 'Создать', new_partner_path, class: 'btn btn-primary', remote: true if can? :manage, :all %>
+        <%= link_to 'Создать партнера', new_partner_path, class: 'btn btn-primary', remote: true if can? :manage, :all %>
       </div>
     </div>
   </div>
@@ -31,11 +31,15 @@
       <div class="row">
         <%= render @projects %>
       </div>
-      <%= link_to 'Создать', new_project_path, class: 'btn btn-primary', remote: true if can? :manage, :all %>
+      <%= link_to 'Создать проект', new_project_path, class: 'btn btn-primary', remote: true if can? :manage, :all %>
     </div>
   </div>
   <div class="tab-pane fade" id="center" role="tabpanel" aria-labelledby="center-tab">
-    О Цетре
-    <%= render @abouts %>
+    <div id="btn_hide_about" class="mt-5">
+      <div class="row">
+        <%= render @abouts %>
+      </div>
+      <%= link_to 'Создать о центре', new_about_path, class: 'btn btn-primary', remote: true if can? :manage, :all %>
+    </div>
   </div>
 </div>

@@ -3,7 +3,9 @@
     <%= image_tag post.photo.variant(resize_to_fill: [300, 150]), class: 'card-img-top' if post.photo.attached? %>
     <div class="card-body">
       <h5 class="card-title"><%= sanitize(strip_tags(post.title)) %></h5>
-      <p class="card-text"><%= truncate(strip_tags(post.description), length: 100, omission: '...') %></p>
+      <p class="card-text">
+        <%= truncate(strip_tags(post.description), length: 100, omission: '...') %>
+      </p>
     </div>
   <% end %>
 </div>
